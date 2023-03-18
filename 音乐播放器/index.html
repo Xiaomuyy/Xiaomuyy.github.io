@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="./less/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./font_7marmge82dp/iconfont.css">
+
+</head>
+
+<body>
+    <div class="music-player">
+        <div class="shang">
+            <div class="top clearfix">
+                <!-- 三横 -->
+                <div class="left">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="center">
+                    <h1>CUB3DPlayer</h1>
+                </div>
+                <!-- 搜索  -->
+                <div class="right">
+                    <p><span></span></p>
+                </div>
+
+            </div>
+            <!-- 可选列表 -->
+            <div class="one-1">
+                <button><i class="bi bi-list-ul"></i></button>
+
+                <div class="options-1">
+                    <input class='trigger--4' type='radio'><i class="iconfont icon-erji"></i>
+                    <input class='trigger--3' type='radio'><i class="iconfont icon-xunhuan"></i>
+                    <input class='trigger--2' type='radio'><i class="iconfont icon-xiayishou"></i>
+                    <input class='trigger--1' type='radio'><i class="iconfont icon-yinle"></i>
+                </div>
+
+            </div>
+
+            <!-- 中间歌曲显示 -->
+            <div class="image clearfix">
+                <div class="zhong">
+                    <!-- 现在播放 -->
+                    <div class="current"><i class="bi bi-music-note-beamed"></i> Now Playing</div>
+                    <div class='details'>
+                        <div class='details_album'></div>
+                        <h2>天使</h2>
+                        <h3>Artist</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- 音量 -->
+            <div class='volume'>
+                <button class="two-2"><i class="iconfont icon-laba"></i></button>
+                <div class='volume-1'>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='volume_pip'></div>
+                    <div class='fa fa-volume-up'>|</div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- 歌曲播放暂停。。。操作 -->
+        <div class="controls">
+            <div class="play-controls">
+                <div class="loopqq">
+                    <!-- 循环 -->
+                    <span class="xuanhuan"><i class="iconfont icon-danxunhuan"></i></span>
+                    <!-- 随机 -->
+                    <span class="suiji"><i class="iconfont icon-xunhuan"></i></span>
+                </div>
+                <!-- 音频 -->
+                <audio src="./audio/天使.mp3" controls id="audio"></audio>
+                <div class="song-play">
+                    <!-- 线 -->
+                    <div class='playbar_inner'></div>
+                    <!-- 滑块 -->
+                    <div class="bar"></div>
+                    <!-- 显示时间 -->
+                    <div class='playbar_left'><span>00:00</span> </div>
+                    <!-- 总时间 -->
+                    <div class='playbar_right'> <span>00:00</span></div>
+                </div>
+
+
+                <!-- 歌曲切换暂停 -->
+                <div class="controls-song">
+                    <!-- 上一首 -->
+                    <div class="icon-back jp-back"><span></span></div>
+                    <!-- 播放 暂停 -->
+                    <!-- <div class="icon-pause jp-pause"><i class="iconfont icon-zanting"></i></div> -->
+                    <div class="icon-play jp-play"><i class="iconfont icon-bofang"></i></div>
+                    <!-- 下一首 -->
+                    <div class="icon-next jp-next"><span></span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="拼图.css" />
+</head>
+
+<body>
+
+  <section class="stage"></section>
+  <div class="box2">
+    <button>开始</button>
+    <div class="one">
+      <span>3 </span>
+      <span>X</span>
+      <span> 3</span>
+    </div>
+  </div>
+
+
+  <script>
+
+    // 拆分 打乱 拖拽 放置
+    // 3x3 9个小盒子
+    // 面向对象 把属性等等 存到对象里面
+
+    var level = 3;
+
+    // 初始创建 cards
+    var cards = new Array(level * level).fill(undefined).map(function (e, i) {
+      return new Card(i);
+    });
+
+
+    // 返回 原始位置 当前位置
+    // 根据当前去算 new
+    function Card(index) {
+      this.origin = index;
+      this.current = index;
+    }
+
+
+    // 显示图片 创建div
+    Card.prototype.show = function () {
+      this.node = document.createElement("div");
+
+      this.node.style.width = 300 / level + "px"
+      this.node.style.height = 300 / level + "px"
+
+      this.node.style.backgroundPosition =
+        (this.origin % level) * -100 +
+        "px " +
+        Math.floor(this.origin / level) * -100 +
+        "px";
+
+
+
+      this.node.setAttribute("draggable", "true");
+
+      document.querySelector(".stage").append(this.node);
+    };
+
+
+    // 更新位置
+    Card.prototype.updataPos = function () {
+      // this.node.style.left = (this.current % level) * 100 + "px";
+      // this.node.style.top = Math.floor(this.current / level) * 100 + "px";
+
+      this.node.style.top = Math.floor((this.current / level)) * (300 / level) + "px";
+      this.node.style.left = (this.current % level) * (300 / level) + "px";
+    };
+
+
+
+    // 随机打乱 canvas随机变 （打乱图块顺序）
+    Card.prototype.start = function () {
+      // 生成数组
+      // 空数组
+      var arr = [];
+      for (let i = 0; i < level * level; i++) {
+        // 新数组
+        arr[i] = i;
+      }
+
+      //sort方法 排序 正数升序，负数逆序 
+      arr.sort(function (a, b) {
+        // 随机数random
+        return Math.random() - 0.5;
+      });
+      // 打乱两次  得到乱序数组
+      arr.sort(function (a, b) {
+        return Math.random() - 0.5;
+      });
+      // console.log(arr);
+
+
+      // 选取dom 把它当前的号改了  遍历 
+      cards.forEach(function (ele, index) {
+        // 每一个dom元素的current变成乱序数组的号
+        ele.current = arr[index];
+        // 更新dom
+        ele.updataPos();
+      });
+    };
+
+    var btn = document.querySelector("button");
+    btn.onclick = function () {
+      cards.forEach(function (ele, index, array) {
+        ele.start();
+        pingtu(ele, index, array);
+      })
+    }
+
+
+    // 选择方块数 每次加1
+    var divOne = document.querySelector(".one");
+    var spans = document.querySelectorAll("span");
+    // console.log(spans);
+    var arr1 = [3, 4, 5, 7, 8];
+    var arr1_index = 0;
+    divOne.onclick = function () {
+      arr1_index++;
+      if (arr1_index == 5 || arr1.includes(arr1[arr1_index]) == false) {
+        arr1_index = 0
+      }
+      // console.log(arr1_index);
+      spans[0].innerText = arr1[arr1_index];
+      spans[2].innerText = arr1[arr1_index];
+      level = arr1[arr1_index];
+      // 先清空
+      document.querySelector(".stage").innerHTML = " ";
+
+      var arr = [];
+      for (let i = 0; i < level * level; i++) {
+        // 新数组
+        arr[i] = i;
+      }
+      cards = arr.map(function (item, i) {
+        return new Card(i);
+      })
+
+      cards.forEach(function (ele, index, array) {
+        ele.show();
+        // 更新dom
+        ele.updataPos();
+        pingtu(ele, index, array)
+      });
+    }
+
+    // 初始化
+    cards.forEach(function (item, index, array) {
+      item.show()
+      item.updataPos()
+    });
+
+
+
+    // 
+    var step = 0
+    function pingtu(o, i, array) {
+      // // 显示
+      // o.show();
+      // // 位置
+      // o.updataPos();
+
+      // 事件  // 拖拽
+      o.node.ondragstart = function (event) {
+        // console.log("拖", this, o, i);
+        event.dataTransfer.setData("index", i);
+      };
+
+      o.node.ondragover = function (event) {
+        event.preventDefault();
+      };
+
+      // 放
+      o.node.ondrop = function (event) {
+        // console.log("传值", event.dataTransfer.getData("index"));
+        // console.log("放", this, o, i);
+        // console.log(array[event.dataTransfer.getData("index")], o);
+        // 交换current
+        var drag = array[event.dataTransfer.getData("index")];
+        var tmp = drag.current;
+        drag.current = o.current;
+        o.current = tmp;
+
+        // 更新视图位置
+        drag.updataPos();
+        o.updataPos();
+
+
+        step++
+        if (checkIsSuccess()) {
+          setTimeout(() => {
+            window.alert("恭喜拼图完成：总共用了" + step + "步骤");
+          }, 1000);
+        }
+
+      };
+    };
+
+    function checkIsSuccess() {
+      return cards.every(function (el) {
+        return el.origin === el.current;
+      });
+    }
+
+
+  </script>
+</body>
+
+</html>

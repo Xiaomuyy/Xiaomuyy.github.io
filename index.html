@@ -1,13 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 的 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>首页</h1>
-    <a href="./使用jQuery实现手风琴效果/使用jQuery实现手风琴效果.html">手风琴效果</a>
+    <!-- <h1>首页</h1> -->
+    <!-- <a href="./使用jQuery实现手风琴效果/使用jQuery实现手风琴效果.html">手风琴效果</a> -->
+
+
+    <header id="header-wrap">
+
+
+        <div id="hero-area" class="hero-area-bg">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <div class="contents">
+                            <h5 class="script-font wow fadeInUp">Hi This is</h5>
+                            <h2 class="head-title wow fadeInUp">Tom Saulnier</h2>
+                            <p class="script-font wow fadeInUp">Front-end Web Developer and Graphic Designer</p>
+                            <ul class="social-icon wow fadeInUp">
+                                <li>
+                                    <a class="facebook" href="#"><i class="icon-social-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="twitter" href="#"><i class="icon-social-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="instagram" href="#"><i class="icon-social-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a class="linkedin" href="#"><i class="icon-social-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a class="google" href="#"><i class="icon-social-google"></i></a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+
+    <section class="section-padding">
+        <!-- <div class="personage"> -->
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  me1">
+                    <div class="fadeInLeft">
+                        <img class="img-fluid" src="./image/123.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 me2 ">
+                    <div class="fadeInRight">
+                        <h3>未来可期</h3>
+                        <div class="about-profile">
+                            <ul class="admin-profile">
+                                <li><span class="pro-title"> 姓名 :</span> <span class="pro-detail">梁旺清</span>
+                                </li>
+                                <li><span class="pro-title"> 年龄 :</span> <span class="pro-detail">22</span></li>
+                                <li><span class="pro-title"> 经验 :</span> <span class="pro-detail">1 年</span>
+                                </li>
+                                <li><span class="pro-title"> 专业 :</span> <span class="pro-detail">通信工程</span></li>
+                                <li><span class="pro-title"> 现居 :</span> <span class="pro-detail">广州</span></li>
+                                <li><span class="pro-title"> 邮箱 :</span><span
+                                        class="pro-detail">3358412657@qq.com</span>
+                                </li>
+                                <li><span class="pro-title"> 电话 :</span><span class="pro-detail">111111111111</span>
+                                </li>
+                                <li><span class="pro-title"> 学历 :</span> <span class="pro-detail">本科</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- </div> -->
+    </section>
+
+
+    <section class="Remarkable-Works">
+        <div class="container">
+            <h2 class="flipInX">我的作品</h2>
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="controls text-center">
+                        <a class="filter active btn btn-common active" data-filter="all">
+                            所有
+                        </a>
+                        <a class="filter btn btn-common" data-filter=".design">
+                            HTML+CSS
+                        </a>
+                        <a class="filter btn btn-common" data-filter=".development">
+                            Javascript
+                        </a>
+                        <a class="filter btn btn-common" data-filter=".print">
+                            Bootstrap
+                        </a>
+                        <a class="filter btn btn-common" data-filter=".print">
+                            CSS3+HTML5
+                        </a>
+                        <a class="filter btn btn-common" data-filter=".print">
+                            vue
+                        </a>
+                    </div>
+                </div>
+
+                <div id="portfolio" class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/拼图.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="image/img/gallery/img-1.jpg">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./拼图/02拼图.html"><i class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/音乐播放器.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="image/img/gallery/img-2.jpg">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./音乐播放器/index.html"><i class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/img-3.jpg" alt="">
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="image/img/gallery/img-3.jpg">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="#"><i class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mix development print">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/jQ手风琴.jpg" alt=""  style="height: 290px;">
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="image/img/gallery/img-3.jpg">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./使用jQuery实现手风琴效果/使用jQuery实现手风琴效果.html"><i class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design print">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/img-4.jpg" alt="">
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="image/img/gallery/img-4.jpg">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="#"><i class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/img-5.jpg" alt="">
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="image/img/gallery/img-5.jpg">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="#"><i class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design print">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/img-6.jpg" alt="">
+                                <div class="overlay">
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="image/img/gallery/img-6.jpg">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="#"><i class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
