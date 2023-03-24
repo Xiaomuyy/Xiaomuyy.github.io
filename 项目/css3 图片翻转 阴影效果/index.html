@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片翻转</title>
+    <link rel="stylesheet" href="./less/style.css">
+</head>
+
+<body>
+    <div class="bigbox">
+        <!-- 上半部分 -->
+        <div class="upbox">
+            <ul class="photo">
+                <!-- 选图 -->
+                <input type="radio" name="cover" id="cover-1">
+                <li class="photo-item">
+                    <!-- 将一个 <label> 和一个 <input> 元素匹配在一起，你需要给 <input> 一个 id 属性。
+                        而 <label> 需要一个 for 属性，其值和 <input> 的 id 一样。 -->
+                    <label for="cover-1">
+                        <!-- <figure> 标签规定独立的流内容（图像、图表、照片、代码等等）。
+                            使用 <figcaption> 元素为 figure 添加标题（caption）。 -->
+                        <figure class="album-pictrue">
+                            <img src="./img/love-is-blind.jpg" alt="">
+                            <figcaption class="album-name">Love Is Blind</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <input type="radio" name="cover" id="cover-2">
+                <li class="photo-item">
+                    <label for="cover-2">
+                        <figure class="album-pictrue">
+                            <img src="./img/disintegration.jpg" alt="">
+                            <figcaption class="album-name">Disintegration</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <input type="radio" name="cover" id="cover-3">
+                <li class="photo-item">
+                    <label for="cover-3">
+                        <figure class="album-pictrue">
+                            <img src="./img/dream-harder.jpg" alt="">
+                            <figcaption class="album-name">Dream Harder</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <input type="radio" name="cover" id="cover-4">
+                <li class="photo-item">
+                    <label for="cover-4">
+                        <figure class="album-pictrue">
+                            <img src="./img/wish.jpg" alt="">
+                            <figcaption class="album-name">Wish</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <input type="radio" name="cover" id="cover-5">
+                <li class="photo-item">
+                    <label for="cover-5">
+                        <figure class="album-pictrue">
+                            <img src="./img/two-five-four.jpg" alt="">
+                            <figcaption class="album-name">2:54</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <input type="radio" name="cover" id="cover-6">
+                <li class="photo-item">
+                    <label for="cover-6">
+                        <figure class="album-pictrue">
+                            <img src="./img/garbage.jpg" alt="">
+                            <figcaption class="album-name">Garbage</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <input type="radio" name="cover" id="cover-7">
+                <li class="photo-item">
+                    <label for="cover-7">
+                        <figure class="album-pictrue">
+                            <img src="./img/long-way-round.jpg" alt="">
+                            <figcaption class="album-name">Long Way Round</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <input type="radio" name="cover" id="cover-8">
+                <li class="photo-item">
+                    <label for="cover-8">
+                        <figure class="album-pictrue">
+                            <img src="./img/homegrown.jpg" alt="">
+                            <figcaption class="album-name">HomeGrown</figcaption>
+                        </figure>
+                    </label>
+                </li>
+                <input type="radio" name="cover" id="cover-9">
+                <li class="photo-item">
+                    <label for="cover-9">
+                        <figure class="album-pictrue">
+                            <img src="./img/casanova.jpg" alt="">
+                            <figcaption class="album-name">Casanova</figcaption>
+                        </figure>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <!-- 下半部分 -->
+        <div class="card">
+            <label for="cover-1">1</label>
+            <label for="cover-2">2</label>
+            <label for="cover-3">3</label>
+            <label for="cover-4">4</label>
+            <label for="cover-5">5</label>
+            <label for="cover-6">6</label>
+            <label for="cover-7">7</label>
+            <label for="cover-8">8</label>
+            <label for="cover-9">9</label>
+        </div>
+    </div>
+</body>
+
+</html>
