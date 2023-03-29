@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化1</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.staticfile.org/echarts/4.7.0/echarts.min.js"></script>
+</head>
+
+<body>
+
+    <div class="bgbox">
+        <div class="top">
+            <h2>医疗实时数据分析大屏</h2>
+            <!-- <p>Internet Food and Beverage Data Display Platform</p> -->
+        </div>
+
+        <div class="main clearfix">
+            <div class="left">
+                <ul>
+
+                    <li class="one">
+                        <h2>实时数据</h2>
+                        <h3>预约挂号数：1 0 8 3 5 5 5</h3>
+                        <h3>在线医生数：1 0 6 3 5 5 5</h3>
+                        <h3>在线居民数：1 1 8 3 5 5 5</h3>
+                    </li>
+                    <li class="two"></li>
+                    <li class="san"></li>
+                    <!-- <h3>等级企业统计</h3>
+                    <h3>年度发展情况</h3> -->
+
+                </ul>
+            </div>
+
+            <div class="center">
+                <!-- <h3>餐馆统计</h3> -->
+                <ul>
+                    <li class="three"></li>
+                    <li class="four"></li>
+                </ul>
+            </div>
+
+            <div class="right">
+                <ul>
+                    <li class="six">
+                        <h2>实时数据</h2>
+                        <h3>平台医生数： 3，631 人</h3>
+                        <h3>平台医院数： 1，305 家</h3>
+                        <h3>居民注册数： 15，682 人</h3>
+                    </li>
+                    <li class="seven">
+                        <!-- <h3>分类统计图</h3> -->
+                    </li>
+                    <li class="eight"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var myCharttwo = echarts.init(document.querySelector(".left ul .two"),null,{render:'svg'});
+        // console.log(myChartsan);
+
+        option = {
+            title: {
+                text: '知识库数量统计',
+                // subtext: 'Fake Data',
+                left: 'center',
+                textStyle: {
+                    color: '#06a1c8',
+                    // fontSize:"16",
+                    fontSize:"18",
+                },
+            },
+            tooltip: {
+                trigger: 'item',
+                textStyle: {
+                    color: '#06a1c8',
+                    // fontSize:"16",
+                    fontSize:"18",
+                },
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                textStyle: {
+                    color: '#06a1c8',
+                    // fontSize:"16",
+                    fontSize:"18",
+                },
+            },
+            series: [
+                {
+                    // name: 'Access From',
+                    type: 'pie',
+                    radius: '50%',
+                    label: {
+                        textStyle: {
+                            color: '#06a1c8',
+                            // fontSize:"16",
+                            fontSize:"18",
+                        },
+                    },
+                    data: [
+                        { value: 18, name: '视频' },
+                        { value: 12, name: '语音' },
+                        { value: 70, name: '文档' },
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            // shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        myCharttwo.setOption(option);
+    </script>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartsan = echarts.init(document.querySelector(".left ul .san"),null,{render:'svg'});
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '热门知识库类型',
+                // subtext: 'Fake Data',
+                left: 'center',
+                textStyle: {
+                    color: '#06a1c8',
+                    // fontSize:"16",
+                    fontSize:"18",
+                },
+            },
+            grid: {
+                top: '18%',
+                left: '8%',  // grid布局设置适当调整避免X轴文字只能部分显示
+                right: '3%', // grid布局设置适当调整避免X轴文字只能部分显示
+                bottom: '15%',
+            },
+            xAxis: {
+                type: 'category',
+                // boundaryGap: false,
+                data: ['流感', '感冒', '发烧', '过敏', '肺炎', '中暑', '传染病'],
+                axisLabel: {
+                    textStyle: {
+                        color: '#06a1c8',
+                        fontSize:"18",
+                    },
+                }
+            },
+            yAxis: {
+                type: 'value',
+                splitLine: { show: false },
+                axisLabel: {
+                    textStyle: {
+                        color: '#06a1c8',
+                        fontSize:"18",
+                    },
+                }
+            },
+            series: [
+                {
+                    data: [
+                        78, 58, 45, 65, 60, 80, 80
+                        /* {
+                            value: 58,
+                            // itemStyle: {
+                            //     color: '#a90000'
+                            // }
+                        }, */
+                    ],
+                    barWidth: 20,
+                    /* itemStyle: {
+                        // color: '#2c03e6'
+                    }, */
+                    type: 'bar',
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: '#06B5D7' },                   //柱图渐变色
+                                    { offset: 0.5, color: '#44C0C1' },                 //柱图渐变色
+                                    { offset: 1, color: '#71C8B1' },                   //柱图渐变色
+                                ]
+                            )
+                        },
+                        emphasis: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: '#71C8B1' },                  //柱图高亮渐变色
+                                    { offset: 0.7, color: '#44C0C1' },                //柱图高亮渐变色
+                                    { offset: 1, color: '#06B5D7' }                   //柱图高亮渐变色
+                                ]
+                            )
+                        }
+                    },
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartsan.setOption(option);
+    </script>
+
+    <script type="text/javascript">
+        var myChartthree = echarts.init(document.querySelector(".center ul .three"),null,{render:'svg'});
+
+        option = {
+            color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+            title: {
+                text: '挂号人数趋势图',
+                // subtext: 'Fake Data',
+                left: 'center',
+                textStyle: {
+                    color: '#06a1c8',
+                    // fontSize:"16",
+                    fontSize:"18",
+                },
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: [{
+                    name:'挂号人数',
+                    icon:'circle',
+                    
+                },{
+                    name:'预约人数',
+                    icon:'circle',
+                }],
+                top:'10%',
+                right:'20%',
+                textStyle: {
+                            color: '#06a1c8',
+                            fontSize:"18",
+                        },
+
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: { show: false }
+                }
+            },
+            grid: {
+                left: '1%',
+                right: '5%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    axisLabel: {
+                        textStyle: {
+                            color: '#06a1c8',
+                            // fontSize:"16",
+                            fontSize:"18",
+                        },
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    splitLine: { show: false },
+                    axisLabel: {
+                        textStyle: {
+                            color: '#06a1c8',
+                            fontSize:"16",
+                        },
+                    }
+                }
+            ],
+            series: [
+                {
+                    // name: 'Line 1',
+                    name:'预约人数',
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 0
+                    },
+                    showSymbol: false,
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {
+                                offset: 0,
+                                color: 'rgb(128, 255, 165)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(1, 191, 236)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [0, 232, 101, 264, 90, 1600, 250, 333, 44, 555, 666]
+                },
+                {
+                    // name: 'Line 2',
+                    name:'挂号人数',
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 0
+                    },
+                    showSymbol: false,
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {
+                                offset: 0,
+                                color: 'rgb(0, 221, 255)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(77, 119, 255)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [0, 282, 111, 264, 220, 100, 310, 332, 101, 64, 90]
+                }
+            ]
+        };
+        myChartthree.setOption(option);
+
+    </script>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartfour = echarts.init(document.querySelector(".center ul .four"),null,{render:'svg'});
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+        option = {
+            title: {
+                text: '地区业务总量',
+                // subtext: 'Fake Data',
+                left: 'center',
+                textStyle: {
+                    color: '#06a1c8',
+                    // fontSize:"16",
+                    fontSize:"18",
+                },
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                top: '10%',
+                left: 'center',
+                textStyle: {
+                    color: '#06a1c8',
+                    // fontSize:"16",
+                    fontSize:"18",
+                },
+            },
+            series: [
+                {
+                    // name: 'Access From',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    center:['50%','58%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center',
+
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: 40,
+                            fontWeight: 'bold',
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        { value: 1048, name: '省人民医院' },
+                        // { value: 735, name: 'Direct' },
+                        { value: 580, name: '遵义医院' },
+                        { value: 484, name: '市二院' },
+                        { value: 300, name: '省二院' }
+                    ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartfour.setOption(option);
+    </script>
+
+    <!--  <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartsix = echarts.init(document.querySelector(".right ul .six"),null,{render:'svg'});
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartsix.setOption(option);
+    </script> -->
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartseven = echarts.init(document.querySelector(".right ul .seven"),null,{render:'svg'});
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+        option = {
+            color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
+            title: {
+                // text: 'Gradient Stacked Area Chart'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: [{
+                    name:'意见',
+                    icon:'circle',
+                    
+                },{
+                    name:'举报',
+                    icon:'circle',
+                }],
+                top:'10%',
+                right:'20%',
+                textStyle: {
+                            color: '#06a1c8',
+                            fontSize:"18",
+                        },
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: { show: false }
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '7%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                    splitLine: {
+                        show: false
+                    },
+                    splitArea: {
+                        show: false
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            color: '#06a1c8',
+                            fontSize:"18",
+                        },
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    splitLine: { show: false },
+                    axisLabel: {
+                        textStyle: {
+                            color: '#06a1c8',
+                            fontSize:"18",
+                        },
+                    }
+                },
+
+            ],
+            series: [
+                {
+                    // name: 'Line 1',
+                    name:'意见',
+                    type: 'line',
+                    // stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 3,
+                    },
+                    showSymbol: false,
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {
+                                offset: 0,
+                                color: 'rgb(255, 255, 165)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(255, 191, 236)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [0, 20, 15, 20, 17, 28, 30, 30]
+                },
+                {
+                    // name: 'Line 2',
+                    name:'举报',
+                    type: 'line',
+                    // stack: 'Total',
+                    smooth: true,
+                    lineStyle: {
+                        width: 3,
+                    },
+                    showSymbol: false,
+                    areaStyle: {
+                        opacity: 0.8,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            {
+                                offset: 0,
+                                color: 'rgb(0, 221, 255)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgb(77, 119, 255)'
+                            }
+                        ])
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [50, 40, 55, 40, 45, 32, 50, 33]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartseven.setOption(option);
+    </script>
+
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myCharteight = echarts.init(document.querySelector(".right ul .eight"),null,{render:'svg'});
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    // Use axis to trigger tooltip
+                    type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                }
+            },
+            legend: {
+                textStyle: {
+                    color: '#06a1c8',
+                    // fontSize:"16",
+                    fontSize:"18",
+                },
+            },
+            grid: {
+                left: '3%',
+                right: '8%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                axisLabel: {
+                    textStyle: {
+                        color: '#06a1c8',
+                        fontSize:"14",
+                    },
+                },
+                splitLine: { show: false },
+            },
+            yAxis: {
+                type: 'category',
+                data: ['2017年十月', '2017年十一月', '2017年十二月'],
+                axisLabel: {
+                    textStyle: {
+                        color: '#06a1c8',
+                        fontSize:"14",
+                    },
+                }
+            },
+            series: [
+                {
+                    name: '咨询数',
+                    
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true,      
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [800, 800, 800]
+                },
+                {
+                    name: '回复数',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [400, 700, 600]
+                },
+                {
+                    name: '未回复数',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [800, 500, 600]
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myCharteight.setOption(option);
+    </script>
+</body>
+
+</html>

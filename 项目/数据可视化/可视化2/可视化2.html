@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化2</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./font_vv5shrjfdpm/iconfont.css">
+    <script src="https://cdn.staticfile.org/echarts/4.7.0/echarts.min.js"></script>
+</head>
+
+<body>
+
+    <div class="bgbox">
+        <div class="top">
+            <h2>设备明细</h2>
+            <ol class="clearfix">
+                <li>选择年份<i class="iconfont icon-zelvxuanzefeiyongdaosanjiaoxingfandui"></i></li>
+                <li>选择月份<i class="iconfont icon-zelvxuanzefeiyongdaosanjiaoxingfandui"></i></li>
+                <li>归属部门<i class="iconfont icon-zelvxuanzefeiyongdaosanjiaoxingfandui"></i></li>
+            </ol>
+            <!-- <p>Internet Food and Beverage Data Display Platform</p> -->
+        </div>
+
+        <div class="main clearfix">
+            <div class="left">
+                <ul>
+                    <li class="one">
+                    </li>
+                    <li class="two clearfix">
+                        <span class="three"></span>
+                        <span class="xr2 four"></span>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <div class="right">
+                <ul>
+                    <li class="five">
+                        <h2></h2>
+
+                    </li>
+                    <li class="six">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartone = echarts.init(document.querySelector(".left ul .one"), null, { render: 'svg' });
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+
+        option = {
+            title: {
+                text: '型号使用率',
+                left: 'rigntr',
+                top: 0,
+                left: 20,
+                textStyle: {
+                    color: 'rgb(10, 235, 156)',
+                    fontSize: "18",
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                },
+            },
+            legend: {
+                data: [{
+                    name: '需求量',
+                    icon: 'circle',
+
+                }, {
+                    name: '保有量',
+                    icon: 'circle',
+                }, {
+                    name: '在用量',
+                    icon: 'circle',
+                }
+                ],
+                textStyle: {
+                    color: 'white',
+                    fontSize: "18",
+                },
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisLine: {
+                        lineStyle: {
+                            color: 'white)',
+                            width: 2,
+                        }
+                    },
+                    data: ['TC5511', 'TC5512', 'TC5513', 'TC5514', 'TC5515', 'TC5516', 'TC5517'],
+                    axisLabel: {
+                        textStyle: {
+                            color: 'white',
+                            fontSize: "18",
+                        },
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: 'white)',
+                            width: 2,
+                        }
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            color: 'white',
+                            fontSize: "18",
+                        },
+                    },
+                    splitLine: {    //网格线
+                        lineStyle: {
+                            type: 'dashed'    //设置网格线类型 dotted：虚线   solid:实线
+                        },
+                        show: true //隐藏或显示
+                    }
+
+                }
+            ],
+            series: [
+                {
+                    name: '需求量',
+                    type: 'bar',
+                    barWidth: 15,
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [88, 88, 88, 220, 180, 88, 50],
+                    itemStyle: {
+                        normal: {
+                            barBorderRadius: [10, 10, 10, 10],
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: 'yellow' },                   //柱图渐变色
+                                    { offset: 0.5, color: 'rgb(237, 231, 128)' },                 //柱图渐变色
+                                    { offset: 1, color: 'orange' },                   //柱图渐变色
+                                ]
+                            )
+                        },
+                        emphasis: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: 'orange' },                  //柱图高亮渐变色
+                                    { offset: 0.7, color: '#44C0C1' },                //柱图高亮渐变色
+                                    { offset: 1, color: 'yellow' }                   //柱图高亮渐变色
+                                ]
+                            )
+                        }
+                    },
+                },
+                {
+                    name: '保有量',
+                    type: 'bar',
+                    barWidth: 15,
+                    stack: 'Ad',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [120, 120, 120, 310, 220, 120, 100],
+                    itemStyle: {
+                        normal: {
+                            barBorderRadius: [10, 10, 10, 10],
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: 'greenyellow' },                   //柱图渐变色
+                                    { offset: 1, color: 'rgb(25, 173, 178)' },                   //柱图渐变色
+                                ]
+                            )
+                        },
+                        emphasis: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: 'rgb(25, 173, 178)' },                  //柱图高亮渐变色
+                                    { offset: 1, color: 'greenyellow' }                   //柱图高亮渐变色
+                                ]
+                            )
+                        }
+                    },
+                },
+                {
+                    name: '在用量',
+                    type: 'bar',
+                    barWidth: 15,
+                    stack: 'Search Engine',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [220, 220, 220, 400, 300, 220, 150],
+                    itemStyle: {
+                        normal: {
+                            barBorderRadius: [10, 10, 10, 10],
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: 'rgb(55, 120, 219)' },                   //柱图渐变色
+                                    { offset: 1, color: 'rgb(106, 102, 229)' },                   //柱图渐变色
+                                ]
+                            )
+                        },
+                        emphasis: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: 'rgb(106, 102, 229)' },                  //柱图高亮渐变色
+                                    { offset: 1, color: 'rgb(55, 120, 219)' }                   //柱图高亮渐变色
+                                ]
+                            )
+                        }
+                    },
+                },
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartone.setOption(option);
+    </script>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartfour = echarts.init(document.querySelector(".left ul .four"), null, { render: 'svg' });
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+
+        option = {
+            title: {
+                text: '塔吊状态',
+                left: 'rigntr',
+                top: 20,
+                left: 20,
+                textStyle: {
+                    color: 'rgb(10, 235, 156)',
+                    fontSize: "18",
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+            },
+            legend: {
+                orient: 'vertical',
+
+                data: [{
+                    icon: 'circle',
+                    name: '在用 45台 45.0%',
+
+                }, {
+                    icon: 'circle',
+                    name: '闲置 55台 55.0%',
+                    padding: [10, 10, 0, 0],
+
+                },
+                ],
+                textStyle: {
+                    color: '#06a1c8',
+                    fontSize: "18",
+                    padding: [15, 0, 15, 0],
+                },
+                top: '35%',
+                left: 200,
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    center: ['25%', '60%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: 'rgb(5, 16, 60)',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    // emphasis: {
+                    //     label: {
+                    //         show: true,
+                    //         fontSize: 40,
+                    //         fontWeight: 'bold'
+                    //     }
+                    // },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        { value: 45, name: '在用 45台 45.0%', itemStyle: { color: 'palevioletred' } },
+                        { value: 55, name: '闲置 55台 55.0%', itemStyle: { color: 'rgb(59, 101, 219)' } },
+                    ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartfour.setOption(option);
+    </script>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartthree = echarts.init(document.querySelector(".left ul .three"), null, { render: 'svg' });
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+
+        option = {
+            title: {
+                text: '电梯状态',
+                left: 'rigntr',
+                top: 20,
+                left: 20,
+                textStyle: {
+                    color: 'rgb(10, 235, 156)',
+                    fontSize: "18",
+                }
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                data: [{
+                    name: '在用 300台 45.0%',
+                    icon: 'circle',
+
+                }, {
+                    name: '闲置 364台 55.0%',
+                    icon: 'circle',
+                },
+                ],
+                textStyle: {
+                    color: '#06a1c8',
+                    fontSize: "18",
+                    padding: [15, 0, 15, 0],
+                },
+                top: '35%',
+                left: 200,
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    center: ['25%', '60%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: 'rgb(5, 16, 60)',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    // emphasis: {
+                    //     label: {
+                    //         show: true,
+                    //         fontSize: 40,
+                    //         fontWeight: 'bold'
+                    //     }
+                    // },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        { value: 300, name: '在用 300台 45.0%', itemStyle: { color: 'rgb(215, 245, 19)' } },
+                        { value: 364, name: '闲置 364台 55.0%', itemStyle: { color: 'rgb(53, 208, 177)' } },
+                    ]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartthree.setOption(option);
+    </script>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartfive = echarts.init(document.querySelector(".right ul .five"), null, { render: 'svg' });
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+
+        option = {
+            title: {
+                text: '闲置率',
+                left: 'rigntr',
+                top: 20,
+                left: 20,
+                textStyle: {
+                    color: 'rgb(10, 235, 156)',
+                    fontSize: "18",
+                }
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            // visualMap: {
+            //     show: false,
+            //     min: 0,
+            //     max: 60,
+            //     inRange: {
+            //         colorLightness: [0, 1]
+            //     }
+            // },
+            series: [
+                {
+                    name: 'Access From',
+                    type: 'pie',
+                    radius: '90%',
+                    center: ['60%', '60%'],
+                    data: [
+                        { value: 39, name: '39%', itemStyle: { color: 'rgb(12,129,254)' } },
+                        { value: 29, name: '29%', itemStyle: { color: 'rgb(68,240,233)' } },
+                        { value: 21, name: '21%', itemStyle: { color: 'rgb(154,5,245)' } },
+                        { value: 17, name: '7%', itemStyle: { color: 'rgb(197,153,56)' } },
+                    ].sort(function (a, b) {
+                        return a.value - b.value;
+                    }),
+                    roseType: 'radius',
+                    label: {
+                        normal: {
+                            position: "inner",
+                            show: true,
+                        }
+                    },
+                    labelLine: {
+                        lineStyle: {
+                            // color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        smooth: 0.2,
+                        length: 10,
+                        length2: 20,
+                        show: false
+                    },
+                    itemStyle: {
+                        // color: '#c23531',
+                        // shadowBlur: 200,
+                        // shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    animationType: 'scale',
+                    animationEasing: 'elasticOut',
+                    animationDelay: function (idx) {
+                        return Math.random() * 200;
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartfive.setOption(option);
+    </script>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartsix = echarts.init(document.querySelector(".right ul .six"), null, { render: 'svg' });
+        // console.log(myCharttwo);
+        // 指定图表的配置项和数据
+
+        option = {
+            title: {
+                text: '防坠器管理',
+                left: 'rigntr',
+                top: 0,
+                left: 20,
+                textStyle: {
+                    color: 'rgb(10, 235, 156)',
+                    fontSize: "18",
+                }
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            graphic: [{ //环形图中间添加文字
+                type: 'text', //通过不同top值可以设置上下显示
+                left: '54%',
+                top: '53%',
+                style: {
+                    text: '250' + '\n' + '总数',
+                    textAlign: 'center',
+                    fill: '#06a1c8', //文字的颜色
+                    fontSize: 18,
+                    fontFamily: "Microsoft YaHei"
+                }
+            }],
+            series: [
+                {
+                    name: 'Access From',
+                    type: 'pie',
+                    radius: ['20%', '100%'],
+                    center: ['60%', '60%'],
+                    data: [
+                        { value: 90, name: '36%', itemStyle: { color: 'rgb(88,212,251)' } },
+                        { value: 60, name: '20%', itemStyle: { color: 'rgb(14,220,160)' } },
+                        { value: 50, name: '16%', itemStyle: { color: 'rgb(47,94,245)' } },
+                        { value: 20, name: '27%', itemStyle: { color: 'rgb(234,89,78)' } },
+                        { value: 30, name: '7%', itemStyle: { color: 'rgb(248,235,120)' } },
+
+                    ].sort(function (a, b) {
+                        return a.value - b.value;
+                    }),
+                    roseType: 'radius',
+                    label: {
+                        normal: {
+                            position: "inner",
+                            show: false,
+                        }
+                    },
+                    labelLine: {
+                        lineStyle: {
+                            // color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        smooth: 0.2,
+                        length: 10,
+                        length2: 20,
+                        show: false
+                    },
+                    itemStyle: {
+                        // color: '#c23531',
+                        // shadowBlur: 200,
+                        // shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    animationType: 'scale',
+                    animationEasing: 'elasticOut',
+                    animationDelay: function (idx) {
+                        return Math.random() * 200;
+                    }
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChartsix.setOption(option);
+    </script>
+
+
+</body>
+
+</html>

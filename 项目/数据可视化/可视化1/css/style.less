@@ -1,0 +1,134 @@
+         * {
+             margin: 0;
+             padding: 0;
+         }
+
+         ul {
+             list-style: none;
+         }
+
+
+         .clearfix::after {
+             content: "";
+             display: block;
+             clear: both;
+         }
+
+         .bgbox {
+             width: 1200px;
+             height: 770px;
+             background: rgb(3, 8, 60);
+             position: relative;
+             margin: 5px auto;
+            //  color: rgb(10, 235, 156);
+
+             .top {
+                 width: 1200px;
+
+                 //  outline: 1px solid red;
+                 position: absolute;
+                 top: 10px;
+                 color: white;
+                 text-align: center;
+             }
+
+             .main {
+                 box-sizing: border-box;
+                 position: absolute;
+                 top: 45px;
+                 // outline: 1px solid rgb(18, 220, 38);
+                 color: white;
+
+                 .one {
+                     color: #06a1c8;
+                     padding-top: 20px;
+
+                     h2,
+                     h3 {
+                         margin: 20px 0;
+                     }
+                 }
+
+                 div {
+                     float: left;
+                 }
+
+                 .left {
+                     margin-left: 30px;
+                 }
+
+                 .right {
+                     margin-left: 30px;
+
+                     .six {
+                         color: #06a1c8;
+                         padding-top: 20px;
+
+                         h2,
+                         h3 {
+                             margin: 20px 0;
+                         }
+
+                         h3 {
+                             width: 300px;
+                             background: rgba(255, 255, 255, 0.08);
+                         }
+                     }
+
+                     .seven {
+                         position: relative;
+                         top: -50px;
+                     }
+                 }
+
+                 .left,
+                 .right {
+                     ul {
+                         li {
+                             width: 300px;
+                             height: 230px;
+                             //    outline: 1px solid rgb(170, 11, 128);
+
+                         }
+
+                         li:nth-child(1) {
+                             // height: 260px;
+                             margin: -10px 0px 20px 0;
+                         }
+
+                         /* li:nth-child(2) {
+                             // height: 310px;
+                            //  margin: 0px 0px 20px 0;
+                         } */
+                     }
+                 }
+
+                 .center {
+                     width: 500px;
+                     height: 700px;
+                     //  margin: 10px 10px;
+
+                     // outline: 1px solid rgb(77, 11, 232);
+
+                     ul {
+                         li {
+                             width: 500px;
+                             // outline: 1px solid rgb(170, 11, 128);
+
+                         }
+
+                         li:nth-child(1) {
+                             height: 340px;
+                             margin: 0px 0px 40px 0;
+                         }
+
+                         li:nth-child(2) {
+                             margin-top: 50px;
+                             height: 340px;
+
+                         }
+                     }
+
+                 }
+             }
+         }

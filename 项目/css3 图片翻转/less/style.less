@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background: #212121;
+    font-family: Helvetica, sans-serif;
+    // font-size: 12px;
+}
+
+ul {
+    list-style: none;
+}
+
+.bigbox {
+    margin: 50px auto 0 auto;
+    width: 650px;
+
+    .upbox {
+        // below：指定倒影在对象的下边
+        // 用法如下： -webkit-box-reflect:below 0px -webkit-linear-
+        // gradient(transparent,transparent 50%,rgba(0,0,0,.8));
+        // -webkit-box-reflect: below 0px 
+        // -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.1) 100%);
+
+        .photo {
+            width: 100%;
+            transform: perspective(900px);
+            transform-style: preserve-3d;
+            perspective-origin: 100% 30%;
+
+            input {
+                //  inherit 关键字规定属性应从其父元素继承其值。
+                color: inherit;
+                // font: inherit;
+                margin: 0 //
+                    //  line-height: normal;
+
+
+            }
+
+            input[type="radio"] {
+                display: none;
+            }
+
+            input[type="radio"]:checked+.photo-item {
+                transform: rotateY(0deg);
+                margin: 0 auto;
+                background: #313131;
+                transition: all 0.4s ease;
+
+                img {
+                    opacity: 1;
+                }
+
+                figcaption {
+                    color: #FFFFFF;
+                }
+
+                /* ~ .photo-item {
+                    transform: rotateY(-45deg);
+                    background: #515151;
+                } */
+            }
+
+            input[type="radio"]:checked+.photo-item ~.photo-item {
+                transform: rotateY(-45deg);
+                background: #515151;
+            }
+
+            .photo-item {
+                display: inline-block;
+                background: #414141;
+                margin: 0 -50px;
+                position: relative;
+                box-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+                transition: all 0.4s ease;
+                background: #212121;
+                transform: rotateY(45deg);
+
+                label {
+                    // color: #999;
+                    display: inline-block;
+                    padding: 10px;
+                    border: 1px solid black;
+                    cursor: pointer;
+                    background: #252525;
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+
+                    &:hover {
+                        color: #FFF;
+                    }
+
+                    padding: 0;
+                    border: none;
+                    display: block;
+                    text-shadow: none;
+
+                    .album-pictrue {
+                        /* display: inline-block;
+                        // 基线的位置会跟基线最低的子元素或者父级元素的基线对齐。
+                        vertical-align: baseline; */
+                        // display: block;
+                        // height: 150px;
+                        // margin: 0;
+
+                        img {
+                            border: 0;
+                            width: 150px;
+                            height: 150px;
+                            opacity: .5;
+                        }
+
+                        .album-name {
+                            // text-align: center;
+                            display: block;
+                            color: #444;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .card {
+        // margin: 30px auto;
+        text-align: center;
+        position: relative;
+        top: 50px;
+        left: -50px;
+        label {
+            color: #999;
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid black;
+            cursor: pointer;
+            background: #252525;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+
+            &:hover {
+                color: #FFF;
+            }
+        }
+
+    }
+}

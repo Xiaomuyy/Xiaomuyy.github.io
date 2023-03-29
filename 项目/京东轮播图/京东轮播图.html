@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./font_ippi9y0zjl/iconfont.css">
+    <title>Document</title>
+    <style>
+        body{
+            background: #ccc3c3;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .banner {
+            width: 590px;
+            height: 470px;
+            margin: 50px auto;
+            position: relative;
+            /* outline: 5px solid blue; */
+
+        }
+
+        .banner .bannerImg {
+            width: 590px;
+            /* outline: 5px solid blue; */
+            overflow: hidden;
+        }
+
+        .banner .bannerImg ul {
+            width: 1000%;
+            margin-left: 0;
+        }
+
+        .banner .bannerImg ul li {
+            float: left;
+        }
+
+
+        .banner .dot {
+            position: absolute;
+            left: 1%;
+            bottom: 35px;
+        }
+
+        .banner .dot ol {
+            display: flex;
+        }
+
+        .banner .dot ol li {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, .4);
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, .05);
+            cursor: pointer;
+        }
+
+        .banner .dot ol li:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .banner .dot ol li.active {
+            background: white;
+            border-radius: 50%;
+            border: 5px solid #999;
+
+        }
+
+        .banner .arrow-left,
+        .banner .arrow-right {
+            
+            width: 25px;
+            height: 35px;
+            background: rgba(0, 0, 0, .15);
+            color: white;
+            text-align: center;
+            line-height: 35px;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: "仿宋";
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            cursor: pointer;
+            /* 去掉选中样式 */
+            user-select: none;
+            
+        }
+
+        .banner .arrow-left {
+            left: 0;
+            border-top-right-radius: 18px;
+            border-bottom-right-radius: 18px;
+        }
+
+        .banner .arrow-right {
+            right: 0;
+            border-top-left-radius: 18px;
+            border-bottom-left-radius: 18px;
+        }
+        .arrow-left:hover,
+        .arrow-right:hover{
+            background: rgba(0,0,0,.4);
+        }
+        .icon-jiantouzuo{
+            margin-left: 3px;
+        }
+        .icon-jiantouyou{
+            margin-left: 5px;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <!-- 轮播图容器 -->
+    <div class="banner">
+        <!-- 轮播图片部分 -->
+        <div class="bannerImg">
+            <ul class="clearfix">
+                <li><a href="#"><img src="./img/8.jpg" /></a></li>
+                <li><a href="#"><img src="./img/1.jpg" /></a></li>
+                <li><a href="#"><img src="./img/2.jpg" /></a></li>
+                <li><a href="#"><img src="./img/3.jpg" /></a></li>
+                <li><a href="#"><img src="./img/4.jpg" /></a></li>
+                <li><a href="#"><img src="./img/5.jpg" /></a></li>
+                <li><a href="#"><img src="./img/6.jpg" /></a></li>
+                <li><a href="#"><img src="./img/7.jpg" /></a></li>
+                <li><a href="#"><img src="./img/8.jpg" /></a></li>
+                <li><a href="#"><img src="./img/1.jpg" /></a></li>
+            </ul>
+        </div>
+
+        <!-- 指示器部分(小圆点) -->
+        <div class="dot">
+            <ol>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+        <!-- 左右箭头 -->
+        <div class="arrow-left "><i class="iconfont icon-jiantouzuo"></i></div>
+        <div class="arrow-right"><i class="iconfont icon-jiantouyou"></i></div>
+    </div>
+
+    <script src="./js/animate.js"></script>
+    <script>
+        // 封装获取DOM对象的方法
+        function $(cssSelector) {
+            var dom = document.querySelectorAll(cssSelector);
+            if (dom.length === 0) {
+                return null;
+            }
+            if (dom.length === 1) {
+                return dom[0];
+            }
+            return dom;
+        }
+
+        // 获取相关DOM对象
+        var banner = $(".banner");
+        var bannerImgUl = $(".banner .bannerImg ul");
+        var Dotlist = $(".banner .dot ol li");
+
+        // 获取相关宽度距离值
+        var bannerWidth = banner.offsetWidth;
+
+        // 轮播图索引号
+        var bannerImgIndex = 1;
+
+        // 小圆点索引号
+        var circleIndex = 0;
+
+        // 定义一个开关变量 true表示打开状态 false表示关闭状态
+        var flag = true;
+
+        // 默认显示图片1
+        bannerImgUl.style.marginLeft = -bannerImgIndex * bannerWidth + "px";
+
+        // 功能1: 点击右侧按钮一次，就让图片滚动一张
+        $(".arrow-right").onclick = function () {
+            // 判断开关状态
+            if (flag) {
+                // 设置为关闭状态
+                flag = false;
+
+                // 自加1
+                bannerImgIndex++;
+
+                // 设置.bannerImg里面ul的margin-left值
+                // bannerImgUl.style.marginLeft = -bannerImgIndex * bannerWidth + "px";
+
+                animate(bannerImgUl, {
+                    "margin-left": -bannerImgIndex * bannerWidth
+                }, function () {
+                    // 动画完成以后的回调函数
+                    // console.log("动画完成");
+                    // console.log("bannerImgIndex=>", bannerImgIndex);
+                    if (bannerImgIndex >= 9) {
+                        // 不带动画的回到真正的图片1
+                        bannerImgIndex = 1;
+                        // 设置.bannerImg里面ul的margin-left值
+                        bannerImgUl.style.marginLeft = -bannerImgIndex * bannerWidth + "px";
+                    }
+
+                    // 动画完毕以后,修改开关状态
+                    flag = true;
+                });
+
+                // 功能2: 点击右侧按钮,小圆圈跟随变化
+                // 自加1
+                circleIndex++;
+                // 小圆点边界判断
+                if (circleIndex >= 8) {
+                    circleIndex = 0;
+                }
+                // 设置高亮
+                for (var i = 0; i < Dotlist.length; i++) {
+                    Dotlist[i].classList.remove("active");
+                }
+                Dotlist[circleIndex].classList.add("active");
+            }
+        }
+
+        // 功能3: 实现左侧按钮功能
+        $(".arrow-left").onclick = function () {
+            // 判断flag是否为true
+            if (flag) {
+                // 设置flag的值为false
+                flag = false;
+
+                // 自减1
+                bannerImgIndex--;
+
+                animate(bannerImgUl, {
+                    "margin-left": -bannerImgIndex * bannerWidth
+                }, function () {
+                    // console.log("bannerImgIndex=>", bannerImgIndex);
+                    if (bannerImgIndex <= 0) {
+                        // 不带动画的回到真正的图片8
+                        bannerImgIndex = 8;
+                        // 设置.bannerImg里面ul的margin-left值
+                        bannerImgUl.style.marginLeft = -bannerImgIndex * bannerWidth + "px";
+                    }
+                    // 动画完成以后,修改flag的值
+                    flag = true;
+                });
+
+                // 自减1
+                circleIndex--;
+                // 小圆点边界判断
+                if (circleIndex < 0) {
+                    circleIndex = 7;
+                }
+                // 设置高亮
+                for (var i = 0; i < Dotlist.length; i++) {
+                    Dotlist[i].classList.remove("active");
+                }
+                Dotlist[circleIndex].classList.add("active");
+            }
+
+        }
+
+        // 功能4: 被点击小圆圈高亮,并且滚动到对应图片
+        // 设置高亮
+        for (var i = 0; i < Dotlist.length; i++) {
+            // 设置自定义属性
+            Dotlist[i].setAttribute("data-index", i);
+
+            // 绑定事件
+            Dotlist[i].onclick = function () {
+                // 排他
+                for (var j = 0; j < Dotlist.length; j++) {
+                    Dotlist[j].classList.remove("active");
+                }
+                // 添加类名
+                this.classList.add("active");
+                // 获取当前小圆点身上的自定义属性
+                var index = Number(this.getAttribute("data-index"));
+                // 计算得到bannerImgIndex
+                bannerImgIndex = index + 1;
+                // 功能5: 点击某个小圆圈,再点击左侧按钮或右侧按钮,解决图片跟小圆点对应不上问题
+                circleIndex = index;
+                // 动画设置.bannerImg里面ul的margin-left值
+                animate(bannerImgUl, {
+                    "margin-left": -bannerImgIndex * bannerWidth
+                });
+            }
+        }
+
+        // 功能6: 自动播放功能
+        var timerIntervalId;
+        // 封装自动录播的函数
+        function autoPlay() {
+            // 清除定时器
+            clearInterval(timerIntervalId);
+            // 开启定时器
+            timerIntervalId = window.setInterval(function () {
+                // 手动触发右侧按钮click鼠标左键点击事件
+                $(".arrow-right").onclick();
+            }, 3000);
+        }
+
+        // 开启自动轮播图
+        autoPlay();
+
+        // 封装停止录播的函数
+        function stopPlay() {
+            // 清除定时器
+            window.clearInterval(timerIntervalId);
+        }
+
+        // 给.banner绑定鼠标移上事件
+        banner.onmouseover = function () {
+            stopPlay();
+        };
+        // 给.banner绑定鼠标移出事件
+        banner.onmouseout = function () {
+            autoPlay();
+        };
+
+        // 功能7: 防止轮播图左右按钮连续点击造成播放过快,添加节流阀功能
+        // 节流阀意思就是做一个开关(变量)  这个变量可以控制状态(状态至少有两种 比如打开状态 关闭状态)
+    </script>
+</body>
+
+</html>

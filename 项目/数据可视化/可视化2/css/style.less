@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.bgbox {
+    width: 1200px;
+    height: 650px;
+    background: rgb(5, 16, 60);
+    position: relative;
+    margin: 5px auto;
+
+    .top {
+        width: 1200px;
+
+        //  outline: 1px solid red;
+        position: absolute;
+        top: 10px;
+        color: white;
+        text-align: center;
+        h2{
+            color: #06a1c8;
+        }
+
+        ol {
+            list-style-type: none;
+            position: absolute;
+                top: 30px;
+                left: 20px;
+
+            li {
+                // display: inline-block;
+                margin: 0 10px;
+                width: 120px;
+                padding: 5px  ;
+                border: 1px solid rgb(31,135,174);
+                border-radius: 5px;
+                background: rgb(26,56,107);
+                float: left;
+                i{
+                    float: right;
+                    color: #0cdea6;
+                }
+            }
+        }
+    }
+
+    .main {
+        box-sizing: border-box;
+        position: absolute;
+        top: 130px;
+        // outline: 1px solid rgb(18, 220, 38);
+        color: white;
+
+        .one {
+            color: #06a1c8;
+            padding-top: 20px;
+        }
+
+        div {
+            float: left;
+        }
+
+        .left {
+            margin-left: 30px;
+        }
+
+        .right {
+            margin-left: 30px;
+
+            .six {
+                color: #06a1c8;
+                padding-top: 20px;
+
+                h2,
+                h3 {
+                    margin: 20px 0;
+                }
+
+                h3 {
+                    width: 300px;
+                    background: rgba(255, 255, 255, 0.08);
+                }
+            }
+        }
+
+        .left {
+            ul {
+                li {
+                    width: 800px;
+                    height: 230px;
+                    // outline: 1px solid rgb(170, 11, 128);
+
+                }
+
+                li:nth-child(1) {
+                    // height: 260px;
+                    margin: -10px 0px 20px 0;
+                }
+
+                li:nth-child(2) {
+                    span {
+                        float: right;
+                        box-sizing: border-box;
+                        width: 400px;
+                        height: 230px;
+                        // outline: 1px solid rgb(77, 11, 232);
+                    }
+                }
+            }
+        }
+
+        .right {
+            ul {
+                li {
+                    width: 310px;
+                    height: 230px;
+                    // outline: 1px solid rgb(170, 11, 128);
+                    margin: -10px 0px 30px 0;
+
+                }
+
+                li:nth-child(1) {
+                    // height: 260px;
+                    height: 230px;
+
+                }
+            }
+        }
+    }
+}

@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 text-center">
                         <div class="contents">
-                            <h5 class="script-font wow fadeInUp">前端网页开发</h5>
+                            <h5 class="script-font wow InUp">前端网页开发</h5>
                             <h2 class="head-title wow fadeInUp"></h2>
                             <p class="script-font wow fadeInUp"></p>
                             <ul class="social-icon wow fadeInUp">
@@ -47,7 +47,7 @@
                                     <a class="google" href="#"><i class="iconfont icon-logo-google"></i></a>
                                 </li>
                             </ul>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -56,35 +56,44 @@
 
     </header>
 
-    <section class="Remarkable-Works">
+    <section id="portfolios" class="Remarkable-Works section-padding">
         <div class="container">
-            <h2 class="flipInX">我的作品</h2>
-            <div class="row ">
+            <h2 class="section-title wow flipInX">我的作品</h2>
+            <div class="row">
                 <div class="col-md-12">
                     <div class="controls text-center">
-                        <a class="filter active btn btn-common active" data-filter="all">
+                        <a class="filter btn btn-common myactive" data-filter="all" id="all">
                             所有
                         </a>
-                        <a class="filter btn btn-common" data-filter=".design">
-                            HTML+CSS
-                        </a>
-                        <a class="filter btn btn-common" data-filter=".development">
-                            Javascript
-                        </a>
-                        <a class="filter btn btn-common" data-filter=".print">
-                            Bootstrap
-                        </a>
-                        <a class="filter btn btn-common" data-filter=".print">
+                        <a class="filter btn btn-common" data-filter="Javascript">
                             CSS3+HTML5
                         </a>
-                        <a class="filter btn btn-common" data-filter=".print">
+                        <a class="filter btn btn-common" data-filter="CSS3+HTML5">
+                            Ajax+jQuery
+                        </a>
+                        <a class="filter btn btn-common" data-filter="Ajax+jQuery">
+                            Bootstrap
+                        </a>
+                        <a class="filter btn btn-common" data-filter="HTML+CSS">
+                            数据可视化
+                        </a>
+                        <a class="filter btn btn-common" data-filter="Bootstrap">
+                            Javascript
+                        </a>
+                        <a class="filter btn btn-common" data-filter="vue">
                             vue
                         </a>
                     </div>
                 </div>
+            </div>
 
-                <div id="portfolio" class="row">
-                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+            <div class="row row1">
+                <!-- <div class="col-md-12"></div> -->
+
+                <!-- 所有 -->
+                <div id="portfolio" class="tab-content tab-pane">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab">
                         <div class="portfolio-item">
                             <div class="shot-item">
                                 <img src="image/img/gallery/拼图 (1).png" alt="">
@@ -93,13 +102,16 @@
                                         <a class="lightbox preview" href="image/img/gallery/放大拼图.png">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a class="link" href="./项目/拼图/02拼图.html"><i class="bi bi-link-45deg"></i></i></a>
+                                        <a class="link" href="./项目/拼图/02拼图.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
+
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print tab-pane " role="tabpanel"
+                        aria-labelledby="home-tab">
                         <div class="portfolio-item">
                             <div class="shot-item">
                                 <img src="image/img/gallery/01音乐播放器.png" alt="">
@@ -108,31 +120,33 @@
                                         <a class="lightbox preview" href="image/img/gallery/放大音乐播放器.png">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a class="link" href="./项目/音乐播放器/index.html"><i class="bi bi-link-45deg"></i></i></a>
+                                        <a class="link" href="./项目/音乐播放器/index.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane " role="tabpanel"
+                        aria-labelledby="home-tab">
                         <div class="portfolio-item">
                             <div class="shot-item">
-                                <img src="image/img/gallery/jQ手风琴.png" alt="">
+                                <img src="image/img/gallery/jq手风琴风景图1（小）.png" alt="">
                                 <div class="overlay">
                                     <div class="icons">jQuery实现手风琴效果
-                                        <a class="lightbox preview" href="image/img/gallery/放大jQ手风琴.png">
+                                        <a class="lightbox preview" href="image/img/gallery/jq手风琴风景图1.png">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a class="link" href="./项目/使用jQuery实现手风琴效果/使用jQuery实现手风琴效果.html"><i class="bi bi-link-45deg"></i></i></a>
+                                        <a class="link" href="./项目/jQuery手风琴风景图/jQuery手风琴风景图.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
-                        <div class="portfolio-item">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane " role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <div class="portfolio-item ">
                             <div class="shot-item">
                                 <img src="image/img/gallery/旋转图片.png" alt="">
                                 <div class="overlay">
@@ -140,15 +154,15 @@
                                         <a class="lightbox preview" href="image/img/gallery/放大旋转图片.png">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a class="link" href="./项目/旋转图片/旋转图片.html"><i class="bi bi-link-45deg"></i></i></a>
+                                        <a class="link" href="./项目/旋转图片/旋转图片.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design print">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design print tab-pane"
+                        role="tabpanel" aria-labelledby="home-tab">
                         <div class="portfolio-item">
                             <div class="shot-item">
                                 <img src="image/img/gallery/翻转.png" alt="">
@@ -157,13 +171,15 @@
                                         <a class="lightbox preview" href="image/img/gallery/放大翻转图片.png">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a class="link" href="./项目/css3 图片翻转 阴影效果/index.html"><i class="bi bi-link-45deg"></i></i></a>
+                                        <a class="link" href="./项目/css3 图片翻转 阴影效果/index.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab">
                         <div class="portfolio-item">
                             <div class="shot-item">
                                 <img src="image/img/gallery/旅游01.png" alt="">
@@ -172,34 +188,307 @@
                                         <a class="lightbox preview" href="image/img/gallery/放大bootstrap.png">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a class="link" href="./项目/旅行风景项目-bootstrap/index.html"><i class="bi bi-link-45deg"></i></i></a>
+                                        <a class="link" href="./项目/旅行风景项目-bootstrap/index.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design print">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab">
                         <div class="portfolio-item">
                             <div class="shot-item">
-                                <img src="image/img/gallery/可视化.png" alt="">
+                                <img src="image/img/gallery/可视化1（小）.png" alt="">
                                 <div class="overlay">
                                     <div class="icons">数据可视化
-                                        <a class="lightbox preview" href="image/img/gallery/放大可视化.png">
+                                        <a class="lightbox preview" href="image/img/gallery/可视化1.png">
                                             <i class="bi bi-eye"></i>
                                         </a>
-                                        <a class="link" href="./项目/数据可视化/数据可视化.html"><i class="bi bi-link-45deg"></i></i></a>
+                                        <a class="link" href="./项目/数据可视化/可视化1/数据可视化1.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/可视化2（小）.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">数据可视化
+                                        <a class="lightbox preview" href="image/img/gallery/可视化2.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/数据可视化/可视化2/可视化2.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- c3h5 -->
+                <div id="portfolio" class="tab-content tab-pane" style="display:none">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane" id="all"
+                        role="tabpanel" aria-labelledby="home-tab">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/拼图 (1).png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">拼图小游戏
+                                        <a class="lightbox preview" href="image/img/gallery/放大拼图.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/拼图/02拼图.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print tab-pane" id="all" role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/01音乐播放器.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">音乐播放器
+                                        <a class="lightbox preview" href="image/img/gallery/放大音乐播放器.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/音乐播放器/index.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane" id="all"
+                        role="tabpanel" aria-labelledby="home-tab">
+                        <div class="portfolio-item ">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/旋转图片.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">旋转图片
+                                        <a class="lightbox preview" href="image/img/gallery/放大旋转图片.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/旋转图片/旋转图片.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design print tab-pane" id="all"
+                        role="tabpanel" aria-labelledby="home-tab">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/翻转.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">css3 图片翻转
+                                        <a class="lightbox preview" href="image/img/gallery/放大翻转图片.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/css3 图片翻转 阴影效果/index.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- jQuery -->
+                <div id="portfolio" class="tab-content tab-pane" style="display:none">
+
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane " role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="./image/img/gallery/jq手风琴风景图1（小）.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">jQuery实现手风琴效果
+                                        <a class="lightbox preview" href="./image/img/gallery/jq手风琴风景图1.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/jQuery手风琴风景图/jQuery手风琴风景图.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane " role="tabpanel"
+                        aria-labelledby="home-tab" style="opacity: 0;">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/jq手风琴风景图1（小）.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">jQuery实现手风琴效果
+                                        <a class="lightbox preview" href="image/img/gallery/放大jQ手风琴.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/使用jQuery实现手风琴效果/使用jQuery实现手风琴效果.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+                <!-- bootstrap -->
+                <div id="portfolio" class="tab-content tab-pane" style="display:none">
+
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/旅游01.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">旅行风景项目-bootstrap
+                                        <a class="lightbox preview" href="image/img/gallery/放大bootstrap.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/旅行风景项目-bootstrap/index.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab" style="opacity: 0;">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/旅游01.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">旅行风景项目-bootstrap
+                                        <a class="lightbox preview" href="image/img/gallery/放大bootstrap.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/旅行风景项目-bootstrap/index.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab" style="opacity: 0;">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/旅游01.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">旅行风景项目-bootstrap
+                                        <a class="lightbox preview" href="image/img/gallery/放大bootstrap.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/旅行风景项目-bootstrap/index.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                  <!-- 可视化 -->
+                  <div id="portfolio" class="tab-content tab-pane" style="display:none">
+
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/可视化1（小）.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">数据可视化
+                                        <a class="lightbox preview" href="image/img/gallery/可视化1.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/数据可视化/可视化1/数据可视化1.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="image/img/gallery/可视化2（小）.png" alt="">
+                                <div class="overlay">
+                                    <div class="icons">数据可视化
+                                        <a class="lightbox preview" href="image/img/gallery/可视化2.png">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a class="link" href="./项目/数据可视化/可视化2/可视化2.html"><i
+                                                class="bi bi-link-45deg"></i></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
             </div>
         </div>
     </section>
 
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        var items = document.querySelectorAll(".controls a");
+
+        // 全部显示
+        // 显示htmlcss  css3+html5    bootstrap....
+        var controlsDJ = document.querySelectorAll(".controls");
+        var bgDiv = document.querySelectorAll(".tab-content");
+        // console.log(bgDiv);
+
+        for (var i = 0; i < items.length; i++) {
+            // 给a设置自定义属性
+            items[i].setAttribute("data-index", i);
+
+            items[i].onclick = function () {
+                // 绑定事件跟触发事件不是同时发生的, 我们能点击的时候, for循环已经结束了
+                // console.log("点击onclick里面的i=>", i);
+
+                for (var j = 0; j < items.length; j++) {
+                    // 删除类名
+                    items[j].classList.remove("myactive");
+                }
+
+                // console.log("this=>", this);
+                // 添加类名
+                this.classList.add("myactive");
+
+                // 隐藏所有
+                for (var k = 0; k < bgDiv.length; k++) {
+                    bgDiv[k].style.display = "none";
+                }
+
+                 // 获取当前点击a身上自定义属性data-index
+                 var index = this.getAttribute("data-index");
+                 bgDiv[index].style.display = "block";
+            }
+        }
 
 
+
+
+
+    </script>
 
     <!-- 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
