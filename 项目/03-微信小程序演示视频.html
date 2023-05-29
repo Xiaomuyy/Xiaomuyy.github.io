@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" style="font-size: calc(100vw / 375)">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日珠宝微信小程序视频</title>
+    <style>
+        .cartoon-app-video {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        video {
+            width: 22rem
+        }
+
+        .btns {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 0 1rem;
+            padding: 0.5rem 0.5rem;
+            background: rgb(146, 146, 232);
+            border: 0.1rem solid rgb(146, 146, 232);
+            border-radius: 0.5rem;
+            color: aliceblue;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cartoon-app-video">
+        <!-- height="600"  -->
+        <video
+            src="./video/文词app.mp4"
+            controls></video>
+
+    </div>
+
+    <div class="btns">
+        <button>播放</button>
+        <button>暂停</button>
+    </div>
+
+    <script>
+        // 多媒体视频音频api(DOM对象api)
+        // 参考网址:http://www.w3school.com.cn/tags/html_ref_audio_video_dom.asp
+
+        // 常用方法
+        // play() 播放
+        // pause() 暂停
+
+        // jQuery没有提供对视频播放控件的方式，也就意味着如果要操作视频播放，必须使用原生的js方法—dom元素
+
+        // 常用属性
+        // duration:音频/视频的总时间（以秒计） 
+        // paused:音频/视频播放的状态
+        // currentTime 设置或返回音频/视频中的当前播放位置（以秒计）
+
+
+        // 常用事件
+        // ontimeupdate:通过该事件来报告当前的播放进度(当目前的播放位置已更改时触发)
+        // oncanplay: 事件在用户可以开始播放视频/音频（audio/video）时触发。
+        // onended:播放完时触发
+
+        var videoDom = document.querySelector("video");
+        console.dir(videoDom);
+
+        var btns = document.querySelectorAll("button");
+        btns[0].onclick = function () {
+            videoDom.play();
+        }
+
+        btns[1].onclick = function () {
+            videoDom.pause();
+        }
+
+       
+
+        // ontimeupdate:通过该事件来报告当前的播放进度(当目前的播放位置已更改时触发)
+        // oncanplay: 事件在用户可以开始播放视频/音频（audio/video）时触发。
+        // onended:播放完时触发
+
+        videoDom.oncanplay = function () {
+            console.log("视频可以播放了~");
+        }
+
+        videoDom.ontimeupdate = function () {
+            console.log("当前位置改变了");
+            console.log(videoDom.currentTime);
+            console.log("");
+        }
+
+        videoDom.onended = function () {
+            console.log("视频播放完毕");
+            videoDom.currentTime = 0;
+        }
+    </script>
+
+
+</body>
+
+</html>
