@@ -8,20 +8,23 @@
     <title>36漫画视频</title>
     <style>
         .cartoon-app-video {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: space-around;
-
-        }
-
-        video {
-            width: 22rem
-        }
-
-        .btns {
+            width: 20rem;
             margin-top: 1rem;
             display: flex;
             justify-content: center;
+            background: #000;
+        }
+
+        video {
+            width: 19rem;
+        }
+
+        .btns {
+            width: 20rem;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            background: #9e7b7b;
         }
 
         button {
@@ -40,9 +43,7 @@
 <body>
     <div class="cartoon-app-video">
         <!-- height="600"  -->
-        <video
-            src="./video/文词app.mp4"
-            controls></video>
+        <video src="./video/漫画视频.mp4" controls></video>
 
     </div>
 
@@ -84,7 +85,7 @@
             videoDom.pause();
         }
 
-       
+
 
         // ontimeupdate:通过该事件来报告当前的播放进度(当目前的播放位置已更改时触发)
         // oncanplay: 事件在用户可以开始播放视频/音频（audio/video）时触发。
